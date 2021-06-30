@@ -24,4 +24,20 @@ public class sqlConnect : MonoBehaviour
 
         Debug.Log(www.downloadHandler.text);
     }
+    IEnumerator Leer()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("Username", GameManager.Get().playerName);
+        UnityWebRequest www = UnityWebRequest.Post("http://localhost/Monedas/register.php", form);
+        yield return www.SendWebRequest();
+        if (www.result == UnityWebRequest.Result.Success)
+        {
+            string textOringinal = www.downloadHandler.text;
+            string[] partes = textOringinal.Split('\t');
+            GameManager.Get().playerName = partes[0];
+            GameManager.Get().playerScore = int.Parse(partes[1]);
+            Debug.Log(GameManager.Get().playerName + " , " + GameManager.Get().playerScore);
+            Debug.Log(www.downloadHandler.text);
+        }
+    }
 }
