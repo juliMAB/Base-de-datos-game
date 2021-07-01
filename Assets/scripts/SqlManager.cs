@@ -8,6 +8,6 @@ public class SqlManager : MonoBehaviour
 
     private void Start()
     {
-        sql.CallRegister();
+        //sql.CallRegister();
     }
 }

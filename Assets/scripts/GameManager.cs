@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using MonoBehaviourSingletonScript;
@@ -9,7 +10,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public string playerName;
 
-    public float playerScore;
+    public int playerScore;
+
+    public string[] partes;
 
     private PlayerController pj;
 
@@ -19,10 +22,10 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         pj.playerSaveAction += UpdateScore;
     }
 
-
     void UpdateScore()
     {
         playerScore = pj.scoreGet;
         print("Se guardo el score en el GM");
     }
+
 }

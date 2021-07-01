@@ -110,3 +110,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToLife: 2.34
   timeToRespawn: 2.9
+  c1: {r: 0.14631534, g: 1, b: 0, a: 0}
+  c2: {r: 1, g: 0.19892474, b: 0, a: 0}
