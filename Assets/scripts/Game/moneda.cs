@@ -6,9 +6,13 @@ using UnityEngine;
 public class moneda : MonoBehaviour
 {
     private float deltaT = 1;
+    private Material material;
+
     [SerializeField] private float tiempoAmarilo;
     [SerializeField] private float tiempoRojo;
-    private Material material;
+   
+    
+    //es publico para que el player pueda saber que agarro una.
     public enum color
     {
         Amarillo,
@@ -16,14 +20,13 @@ public class moneda : MonoBehaviour
     }
 
     public color estado;
-    // Start is called before the first frame update
+   
     void Start()
     {
         estado = color.Amarillo;
         material = GetComponent<MeshRenderer>().material;
     }
 
-    // Update is called once per frame
     void Update()
     {
         deltaT -= Time.deltaTime;

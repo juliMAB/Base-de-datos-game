@@ -14,15 +14,14 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public string[] partes;
 
-    private PlayerController pj;
+    public PlayerController pj;
 
     public void GetPlayer()
     {
-        pj = FindObjectOfType<PlayerController>();
         pj.playerSaveAction += UpdateScore;
     }
 
-    void UpdateScore()
+    public void UpdateScore()
     {
         playerScore = pj.scoreGet;
         print("Se guardo el score en el GM");

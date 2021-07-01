@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         sql.OnReadEnd += ShowScores;
+        sql.CallRegister();
     }
 
     public void CallButton()

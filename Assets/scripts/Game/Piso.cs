@@ -78,7 +78,6 @@ public class Piso : MonoBehaviour
             case State.Respawneando:
                 timeT -= Time.deltaTime;
                 aux = ((timeT / timeToLife)-1)*-0.999f;
-                print(aux);
                 mR.material.color = new Color(mR.material.color.r, mR.material.color.g, mR.material.color.b, aux);
 
                 if (timeT > 0)

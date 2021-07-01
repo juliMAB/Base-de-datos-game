@@ -112,6 +112,6 @@ MonoBehaviour:
   timeToRespawn: 2
   dying: 3
   timeDie: 6
-  c1: {r: 0, g: 1, b: 0, a: 1}
-  c2: {r: 1, g: 0.19892474, b: 0, a: 1}
+  c1: {r: 0, g: 0.5377358, b: 0, a: 1}
+  c2: {r: 0.6037736, g: 0.120754726, b: 0, a: 1}
   actualState: 0

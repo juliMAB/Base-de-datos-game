@@ -11,23 +11,25 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int vidas;
     [SerializeField] private int score;
     [SerializeField] private bool saltar=false;
+    [SerializeField] private float speed;
+    [SerializeField] private float saltoFuerza;
+    [SerializeField] private float gravedad;
+    [SerializeField] private float saltoColdown;
+    [SerializeField] private GameObject spawn;
+    private Rigidbody rBody;
+    private float saltoT;
     public int vidasGet => vidas;
     public int scoreGet => score;
     public bool saltarGet => saltar;
     
-    [SerializeField] private float speed;
-
-    [SerializeField] private GameObject spawn;
-    [SerializeField] private Rigidbody rBody;
-    [SerializeField] private float saltoF;
-    [SerializeField] private float gravedad;
-    [SerializeField] private float saltoT;
-    [SerializeField] private float saltoColdown;
+    
 
     Animator animator;
 
     void Start()
     {
+        GameManager.Get().pj = this;
+        playerSaveAction += GameManager.Get().UpdateScore;
         rBody = GetComponent<Rigidbody>();
         playerChangeAction?.Invoke();
         saltoT = 0;
@@ -112,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
     void Saltar()
     {
-        rBody.AddForce((saltoF * Vector3.up) + rBody.velocity * 10);
+        rBody.AddForce((saltoFuerza * Vector3.up) + rBody.velocity * 10);
     }
 
     void OnTriggerEnter(Collider other)
