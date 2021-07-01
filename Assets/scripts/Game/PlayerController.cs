@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Action playerSaveAction;
     [SerializeField] private int vidas;
     [SerializeField] private int score;
-    [SerializeField] private bool saltar=false;
+    [SerializeField] private bool saltar = false;
     [SerializeField] private float speed;
     [SerializeField] private float saltoFuerza;
     [SerializeField] private float gravedad;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject spawn;
     private Rigidbody rBody;
     private float saltoT;
-    public int vidasGet => vidas;
+    public int vidasGet { get { return vidas; } set { vidas = value; } }
     public int scoreGet => score;
     public bool saltarGet => saltar;
     
