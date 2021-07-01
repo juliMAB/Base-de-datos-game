@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MonoBehaviourSingletonScript;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
